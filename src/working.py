@@ -8,7 +8,7 @@ import matplotlib.pylab as plt
 
 # Open the hdf file
 root = "/home/hamid/dscovr/"
-file = "data/DSCOVR_EPIC_L2_VESDR_02_20160401025239_03.h5"
+file = "data/DSCOVR_EPIC_L2_VESDR_02_20160823152458_03.h5"
 h5fpath  = os.path.join(root, file)   
 h5f = h5py.File(h5fpath, "r") 
 date = file.split("_")[5]
@@ -26,25 +26,14 @@ Scale_factor_VESDR = 0.001
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-xyPath  = root+ "MCDLCHKM.V2010_01.REGIONALbio.10018m.BlocksOP.h5"
+xyPath  = root+ "data/MCDLCHKM.V2010_01.REGIONALbio.10018m.BlocksOP.h5"
 xyf = h5py.File(xyPath, "r") 
 
 
-outpath = r"/home/hamid/dscovr/"
+outpath = r"/home/hamid/dscovr/outputs/"
 
 field = '19_MAIAC_CloudLWmask'
-tile = "tile20"
+tile = "tile31"
 
 
 # Get geolocations from land cover map and create a vrt map
@@ -61,14 +50,16 @@ df = df[df['Lat'] > -999.0]
 df.data[df.data <= -9998] = -9999.0
 
 df.to_csv(os.path.join(outpath, "{0}_{1}_{2}.csv".format(tile, field, date)),sep=",",index=False)
+
 msg = '''<OGRVRTDataSource>
-    <OGRVRTLayer name="{0}_{1}_{2}">
-        <SrcDataSource>{3}_{4}_{5}.csv</SrcDataSource>
+    <OGRVRTLayer name="{1}_{2}_{3}">
+        <SrcDataSource>{0}{1}_{2}_{3}.csv</SrcDataSource>
         <GeometryType>wkbPoint</GeometryType>
         <GeometryField encoding="PointFromColumns" x="Lon" y="Lat" z="data"/>
     </OGRVRTLayer>
-</OGRVRTDataSource>'''.format(tile, field, date, tile, field, date)
-        
+</OGRVRTDataSource>'''.format(outpath,tile, field, date)
+
+
 msgpath = os.path.join(outpath, "{0}_{1}_{2}.vrt".format(tile, field, date))
 file = open(msgpath, 'w')
 file.write(msg)   
@@ -103,15 +94,14 @@ if (tile=='tile30'):
 
 if tile == 'tile31':
     xmin, xmax = -115,-25
-    ymin,ymax = -90,0
+    ymin,ymax = -85,0
 
 inputfile1 = "{0}_{1}_{2}".format(tile, field, date)
-inputfile2 = "{0}_{1}_{2}.vrt".format(tile, field, date)
-outputfile = "{0}_{1}_{2}_{3}.tif".format(field, date, tile,"155_180") 
-outputfile = outputfile
+inputfile2 = "{0}{1}_{2}_{3}.vrt".format(outpath,tile, field, date)
+outputfile =  "{0}{1}_{2}_{3}{4}.tif".format(outpath, field, date, tile,"test") 
 # scmd = 'gdal_grid -a linear:radius=0:nodata=-9999.0 -txe %f %f -tye %f %f -tr 0.1 0.1 -a_srs EPSG:4326 -of GTiff -ot Float64 -l %s %s %s'\
 #         % (xmin, xmax,ymin,ymax, inputfile1, inputfile2, outputfile)
-xmin, xmax = 155,180   # Swap the values
+
 scmd = 'gdal_grid -a linear:radius=0:nodata=-9999.0 -txe %f %f -tye %f %f -tr 0.1 0.1 -a_srs EPSG:4326 -of GTiff -ot Float64 -l %s %s %s' \
        % (xmin, xmax, ymin, ymax, inputfile1, inputfile2, outputfile)
 os.system(scmd)

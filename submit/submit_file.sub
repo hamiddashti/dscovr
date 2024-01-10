@@ -14,4 +14,4 @@ should_transfer_files = YES
 when_to_transfer_output = ON_EXIT
 
 
-queue URL from /home/dashtiahanga/dscovr/submit/file_lists/file_list_01.txt
+queue URL from /home/dashtiahanga/dscovr/submit/file_lists/file_list_08.txt

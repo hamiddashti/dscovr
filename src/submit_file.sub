@@ -1,0 +1,16 @@
+universe = vanilla
+executable = process.sh
+arguments = $(URL)
+log = reproj_$(Cluster).log
+error = reproj_$(Cluster)_$(Process).err
+output = process_$(Cluster)_$(Process).out
+notification = Never
+request_cpus = 1
+request_memory = 1GB
+request_disk = 1GB
+transfer_input_files = process.sh, download.sh, hello.py, URL_names.txt
+
+should_transfer_files = YES
+when_to_transfer_output = ON_EXIT
+
+queue URL from URL_names.txt

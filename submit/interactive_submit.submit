@@ -1,0 +1,5 @@
+universe = vanilla
+executable = /bin/bash
+arguments = -i
+getenv = true
+queue 1

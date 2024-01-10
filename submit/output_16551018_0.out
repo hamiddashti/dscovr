@@ -1,0 +1,188 @@
+reproject.py
+utils.py
+download.sh
+Grid data type is "Float64"
+Grid size = (900 900).
+Corner coordinates = (-25.000000 90.000000)-(65.000000 0.000000).
+Grid cell size = (0.100000 -0.100000).
+Source point count = 919378.
+Algorithm name: "linear".
+Options are "radius=0.000000:nodata=-9999.000000"
+
+0...10...20...30...40...50...60...70...80...90...100 - done.
+Grid data type is "Float64"
+Grid size = (900 900).
+Corner coordinates = (-25.000000 90.000000)-(65.000000 0.000000).
+Grid cell size = (0.100000 -0.100000).
+Source point count = 919378.
+Algorithm name: "linear".
+Options are "radius=0.000000:nodata=-9999.000000"
+
+0...10...20...30...40...50...60...70...80...90...100 - done.
+Grid data type is "Float64"
+Grid size = (900 900).
+Corner coordinates = (-25.000000 90.000000)-(65.000000 0.000000).
+Grid cell size = (0.100000 -0.100000).
+Source point count = 919378.
+Algorithm name: "linear".
+Options are "radius=0.000000:nodata=-9999.000000"
+
+0...10...20...30...40...50...60...70...80...90...100 - done.
+Grid data type is "Float64"
+Grid size = (900 900).
+Corner coordinates = (-25.000000 0.000000)-(65.000000 -90.000000).
+Grid cell size = (0.100000 -0.100000).
+Source point count = 918378.
+Algorithm name: "linear".
+Options are "radius=0.000000:nodata=-9999.000000"
+
+0...10...20...30...40...50...60...70...80...90...100 - done.
+Grid data type is "Float64"
+Grid size = (900 900).
+Corner coordinates = (-25.000000 0.000000)-(65.000000 -90.000000).
+Grid cell size = (0.100000 -0.100000).
+Source point count = 918378.
+Algorithm name: "linear".
+Options are "radius=0.000000:nodata=-9999.000000"
+
+0...10...20...30...40...50...60...70...80...90...100 - done.
+Grid data type is "Float64"
+Grid size = (900 900).
+Corner coordinates = (-25.000000 0.000000)-(65.000000 -90.000000).
+Grid cell size = (0.100000 -0.100000).
+Source point count = 918378.
+Algorithm name: "linear".
+Options are "radius=0.000000:nodata=-9999.000000"
+
+0...10...20...30...40...50...60...70...80...90...100 - done.
+Grid data type is "Float64"
+Grid size = (650 900).
+Corner coordinates = (-180.000000 90.000000)-(-115.000000 0.000000).
+Grid cell size = (0.100000 -0.100000).
+Source point count = 919378.
+Algorithm name: "linear".
+Options are "radius=0.000000:nodata=-9999.000000"
+
+0...10...20...30...40...50...60...70...80...90...100 - done.
+Grid data type is "Float64"
+Grid size = (250 900).
+Corner coordinates = (155.000000 90.000000)-(180.000000 0.000000).
+Grid cell size = (0.100000 -0.100000).
+Source point count = 919378.
+Algorithm name: "linear".
+Options are "radius=0.000000:nodata=-9999.000000"
+
+0...10...20...30...40...50...60...70...80...90...100 - done.
+Grid data type is "Float64"
+Grid size = (650 900).
+Corner coordinates = (-180.000000 90.000000)-(-115.000000 0.000000).
+Grid cell size = (0.100000 -0.100000).
+Source point count = 919378.
+Algorithm name: "linear".
+Options are "radius=0.000000:nodata=-9999.000000"
+
+0...10...20...30...40...50...60...70...80...90...100 - done.
+Grid data type is "Float64"
+Grid size = (250 900).
+Corner coordinates = (155.000000 90.000000)-(180.000000 0.000000).
+Grid cell size = (0.100000 -0.100000).
+Source point count = 919378.
+Algorithm name: "linear".
+Options are "radius=0.000000:nodata=-9999.000000"
+
+0...10...20...30...40...50...60...70...80...90...100 - done.
+Grid data type is "Float64"
+Grid size = (650 900).
+Corner coordinates = (-180.000000 90.000000)-(-115.000000 0.000000).
+Grid cell size = (0.100000 -0.100000).
+Source point count = 919378.
+Algorithm name: "linear".
+Options are "radius=0.000000:nodata=-9999.000000"
+
+0...10...20...30...40...50...60...70...80...90...100 - done.
+Grid data type is "Float64"
+Grid size = (250 900).
+Corner coordinates = (155.000000 90.000000)-(180.000000 0.000000).
+Grid cell size = (0.100000 -0.100000).
+Source point count = 919378.
+Algorithm name: "linear".
+Options are "radius=0.000000:nodata=-9999.000000"
+
+0...10...20...30...40...50...60...70...80...90...100 - done.
+Grid data type is "Float64"
+Grid size = (900 900).
+Corner coordinates = (-115.000000 90.000000)-(-25.000000 0.000000).
+Grid cell size = (0.100000 -0.100000).
+Source point count = 919378.
+Algorithm name: "linear".
+Options are "radius=0.000000:nodata=-9999.000000"
+
+0...10...20...30...40...50...60...70...80...90...100 - done.
+Grid data type is "Float64"
+Grid size = (900 900).
+Corner coordinates = (-115.000000 90.000000)-(-25.000000 0.000000).
+Grid cell size = (0.100000 -0.100000).
+Source point count = 919378.
+Algorithm name: "linear".
+Options are "radius=0.000000:nodata=-9999.000000"
+
+0...10...20...30...40...50...60...70...80...90...100 - done.
+Grid data type is "Float64"
+Grid size = (900 900).
+Corner coordinates = (-115.000000 90.000000)-(-25.000000 0.000000).
+Grid cell size = (0.100000 -0.100000).
+Source point count = 919378.
+Algorithm name: "linear".
+Options are "radius=0.000000:nodata=-9999.000000"
+
+0...10...20...30...40...50...60...70...80...90...100 - done.
+Grid data type is "Float64"
+Grid size = (900 900).
+Corner coordinates = (-115.000000 0.000000)-(-25.000000 -90.000000).
+Grid cell size = (0.100000 -0.100000).
+Source point count = 918378.
+Algorithm name: "linear".
+Options are "radius=0.000000:nodata=-9999.000000"
+
+0...10...20...30...40...50...60...70...80...90...100 - done.
+Grid data type is "Float64"
+Grid size = (900 900).
+Corner coordinates = (-115.000000 0.000000)-(-25.000000 -90.000000).
+Grid cell size = (0.100000 -0.100000).
+Source point count = 918378.
+Algorithm name: "linear".
+Options are "radius=0.000000:nodata=-9999.000000"
+
+0...10...20...30...40...50...60...70...80...90...100 - done.
+Grid data type is "Float64"
+Grid size = (900 900).
+Corner coordinates = (-115.000000 0.000000)-(-25.000000 -90.000000).
+Grid cell size = (0.100000 -0.100000).
+Source point count = 918378.
+Algorithm name: "linear".
+Options are "radius=0.000000:nodata=-9999.000000"
+
+0...10...20...30...40...50...60...70...80...90...100 - done.
+Reprojecting: tile00_01_LAI
+Reprojecting: tile00_02_SLAI
+Reprojecting: tile00_03_FPAR
+Reprojecting: tile01_01_LAI
+Reprojecting: tile01_02_SLAI
+Reprojecting: tile01_03_FPAR
+Reprojecting: tile20_01_LAI
+Reprojecting: tile20_02_SLAI
+Reprojecting: tile20_03_FPAR
+Reprojecting: tile30_01_LAI
+Reprojecting: tile30_02_SLAI
+Reprojecting: tile30_03_FPAR
+Reprojecting: tile31_01_LAI
+Reprojecting: tile31_02_SLAI
+Reprojecting: tile31_03_FPAR
+outputs/
+outputs/tile20_20160823152458_Asia.tif
+outputs/tile30_20160823152458.tif
+outputs/tile01_20160823152458.tif
+outputs/tile31_20160823152458.tif
+outputs/tile00_20160823152458.tif
+outputs/tile20_20160823152458_US.tif
+Cleaning up...

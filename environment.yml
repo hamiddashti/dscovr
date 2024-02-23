@@ -1,0 +1,27 @@
+name: dscovr
+channels:
+  - defaults
+dependencies:
+  - mamba
+  - ipykernel
+  - ca-certificates
+  - certifi
+  - openssl
+  - h5py
+  - gdal
+  - pandas
+  - fiona
+  - rasterio
+  - netcdf4
+  - proj
+  - xarray
+  - matplotlib
+  - cartopy
+  - rioxarray
+  - conda-forge::timezonefinder
+  - conda-forge::geopy
+  - conda-forge::tzwhere
+  - statsmodels
+  - seaborn
+  - geopandas
+prefix: /home/hamid/anaconda3/envs/dscovr

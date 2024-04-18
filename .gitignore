@@ -16,7 +16,7 @@ __pycache__/
 data/
 outputs/data/
 outputs/presentations/
-
+manuscript_dscovr
 
 # Ignore some of the big files
 dscovr2.tar.gz

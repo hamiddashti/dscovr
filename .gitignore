@@ -13,9 +13,8 @@ __pycache__/
 *.pyc
 
 # Ignore directories
-data/
-outputs/data/
-outputs/presentations/
+data
+outputs
 manuscript_dscovr
 
 # Ignore some of the big files

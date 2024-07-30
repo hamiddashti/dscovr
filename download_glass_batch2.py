@@ -15,7 +15,7 @@ import concurrent.futures
 warnings.simplefilter(action="ignore", category=FutureWarning)
 
 # Set up logging
-logging.basicConfig(filename='script_log.log', level=logging.INFO, 
+logging.basicConfig(filename='script_log_batch2.log', level=logging.INFO, 
                     format='%(asctime)s - %(levelname)s - %(message)s')
 
 def latlon_to_modis_tile(lat, lon):
@@ -163,7 +163,7 @@ def convert_projection(file_path):
 
 def process_site(name, lat, lon, base_url):
     for year in range(2002, 2022):
-        output_directory = f"/home/hamid/mnt/nas/Hamid/GLASS/EC_SITES/{name}/{str(year)}"
+        output_directory = f"/Users/hdashti/NAS/Hamid/GLASS/EC_SITES/{name}/{str(year)}"
         if not os.path.exists(output_directory):
             os.makedirs(output_directory)
         directories = get_directories(base_url + str(year) + "/")
@@ -186,32 +186,33 @@ def process_site(name, lat, lon, base_url):
 # Main execution
 if __name__ == "__main__":
     try:
-        ameriflux_coords = pd.read_csv("../data/Ameriflux_coords.csv")
-        fluxnet_coords = pd.read_csv("../data/Fluxnet_coords.csv")
-        merged_coords = pd.concat([ameriflux_coords, fluxnet_coords], ignore_index=True)
-        merged_coords.drop_duplicates(subset=merged_coords.columns[0], inplace=True)
-        merged_coords.reset_index(drop=True, inplace=True)
-        merged_coords.rename({"Name": "name"}, axis=1, inplace=True)
+        # ameriflux_coords = pd.read_csv("../data/Ameriflux_coords.csv")
+        # fluxnet_coords = pd.read_csv("../data/Fluxnet_coords.csv")
+        # merged_coords = pd.concat([ameriflux_coords, fluxnet_coords], ignore_index=True)
+        # merged_coords.drop_duplicates(subset=merged_coords.columns[0], inplace=True)
+        # merged_coords.reset_index(drop=True, inplace=True)
+        # merged_coords.rename({"Name": "name"}, axis=1, inplace=True)
+        merged_coords = pd.read_csv("./merged_coords_batch2.csv")
 
         base_url = "http://www.glass.umd.edu/LAI/MODIS/500m/"
-        skipped_sites_file = "/home/hamid/mnt/nas/Hamid/GLASS/EC_SITES/skipped_sites.txt"
+        # skipped_sites_file = "/Users/hdashti/NAS/Hamid/GLASS/EC_SITES/skipped_sites_batch2.txt"
 
-        # Prepare lists for existing directories
-        to_drop_indices = []
+        # # Prepare lists for existing directories
+        # to_drop_indices = []
 
-        # Iterate over sites and check if directories already exist
-        for i in range(len(merged_coords)):
-            name = merged_coords["name"][i]
-            for year in range(2002, 2022):
-                output_directory = f"/home/hamid/mnt/nas/Hamid/GLASS/EC_SITES/{name}/{str(year)}"
-                if os.path.exists(output_directory):
-                    to_drop_indices.append(i)
-                    with open(skipped_sites_file, "a") as f:
-                        f.write(f"{name} {year}\n")
-                    break  # No need to check further years if one year already exists
+        # # Iterate over sites and check if directories already exist
+        # for i in range(len(merged_coords)):
+        #     name = merged_coords["name"][i]
+        #     for year in range(2002, 2022):
+        #         output_directory = f"/Users/hdashti/NAS/Hamid/GLASS/EC_SITES/{name}/{str(year)}"
+        #         if os.path.exists(output_directory):
+        #             to_drop_indices.append(i)
+        #             with open(skipped_sites_file, "a") as f:
+        #                 f.write(f"{name} {year}\n")
+        #             break  # No need to check further years if one year already exists
 
-        # Drop the identified rows
-        merged_coords = merged_coords.drop(to_drop_indices).reset_index(drop=True)
+        # # Drop the identified rows
+        # merged_coords = merged_coords.drop(to_drop_indices).reset_index(drop=True)
 
         # Prepare lists for site names, latitudes, and longitudes
         site_names = merged_coords["name"]
@@ -219,7 +220,7 @@ if __name__ == "__main__":
         site_lon = merged_coords["Lon"]
 
         # Run in parallel with limited concurrency
-        max_workers = 5  # Adjust this number based on your system's capabilities
+        max_workers = 48  # Adjust this number based on your system's capabilities
         with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
             futures = [executor.submit(process_site, site_names[i], site_lat[i], site_lon[i], base_url) for i in range(len(site_names))]
             for future in concurrent.futures.as_completed(futures):
@@ -232,3 +233,6 @@ if __name__ == "__main__":
         logging.error(f"Main execution error: {e}")
 
 logging.info("Script completed.")
+
+# command to run the script
+#nohup python download_glass_batch2.py > output_batch2.log 2>&1 &

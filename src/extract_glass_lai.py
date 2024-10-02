@@ -13,7 +13,7 @@ def process_site(site_info):
     i, name, lat, lon = site_info
     print(f"Processing: {name}, i: {i}")
 
-    base_dir = "/home/hamid/mnt/nas/Hamid/GLASS/EC_SITES/"
+    base_dir = "/Users/hdashti/mnt/nas/GLASS/EC_SITES/"
     years = np.arange(2002, 2022)
     fnames = []
     dates = []
@@ -38,14 +38,15 @@ def process_site(site_info):
         lai_tmp.append(da.sel(x=lon, y=lat, method="nearest").values * 0.1)
 
     data_frame = pd.DataFrame(lai_tmp, index=dates, columns=["LAI"])
-    output_dir = "/home/hamid/mnt/nas/Hamid/GLASS/csv_files/"
+    output_dir = "/Users/hdashti/mnt/nas/GLASS/csv_files/"
     data_frame.to_csv(f"{output_dir}{name}.csv")
 
 
 if __name__ == "__main__":
-    merged_coords_1 = pd.read_csv("../data/merged_coords_batch1.csv")
-    merged_coords_2 = pd.read_csv("../data/merged_coords_batch2.csv")
-    merged_coords = pd.concat([merged_coords_1, merged_coords_2], ignore_index=True)
+    # merged_coords_1 = pd.read_csv("../data/merged_coords_batch1.csv")
+    # merged_coords_2 = pd.read_csv("../data/merged_coords_batch2.csv")
+    # merged_coords = pd.concat([merged_coords_1, merged_coords_2], ignore_index=True)
+    merged_coords = pd.read_csv("./ICOS_fluxnet_coords.csv")
 
     # Prepare the list of arguments for each site
     site_info_list = [

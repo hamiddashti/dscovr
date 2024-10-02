@@ -63,8 +63,8 @@ if __name__ == "__main__":
     merged_coords_2 = pd.read_csv("./merged_coords_batch2.csv")
     merged_coords = pd.concat([merged_coords_1, merged_coords_2], ignore_index=True)
 
-    base_dir = "/Users/hdashti/NAS/Hamid/GLASS/EC_SITES/"
-    output_dir = "/Users/hdashti/NAS/Hamid/GLASS/xr_files/"
+    base_dir = "/Users/hdashti/mnt/nas/GLASS/EC_SITES/"
+    output_dir = "/Users/hdashti/mnt/nas/GLASS/xr_files/"
 
     # Process all sites in parallel
     futures = []
